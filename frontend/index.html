@@ -1,25 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Users Dashboard</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Users Dashboard</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="panel">
+        <header class="panel-header">
+          <div>
+            <p class="eyebrow">UNIT 6 API OUTPUT</p>
+            <h1>Users Dashboard</h1>
+          </div>
+          <button id="refreshBtn" class="ghost-btn">Refresh</button>
+        </header>
 
-  <div class="container">
-    <h1>👥 Users Dashboard</h1>
+        <div class="stats-row">
+          <article class="stat-card">
+            <span>Current Page</span>
+            <strong id="currentPageValue">1</strong>
+          </article>
+          <article class="stat-card">
+            <span>Users Shown</span>
+            <strong id="usersShownValue">0</strong>
+          </article>
+        </div>
 
-    <div id="users" class="grid"></div>
+        <p id="status" class="status">Loading users...</p>
 
-    <div class="pagination">
-      <button onclick="prevPage()">⬅ Prev</button>
-      <span id="page">Page 1</span>
-      <button onclick="nextPage()">Next ➡</button>
-    </div>
-  </div>
+        <div id="usersGrid" class="users-grid"></div>
 
-  <script src="app.js"></script>
-</body>
+        <footer class="panel-footer">
+          <button id="prevBtn" class="nav-btn">Previous</button>
+          <span id="pageBadge" class="page-badge">Page 1</span>
+          <button id="nextBtn" class="nav-btn">Next</button>
+        </footer>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
 </html>

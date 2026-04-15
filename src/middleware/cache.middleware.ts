@@ -4,7 +4,7 @@ export const cacheMiddleware = (req: any, res: any, next: any) => {
   const key = req.originalUrl;
 
   if (cache[key]) {
-    console.log("⚡ Cache HIT");
+    console.log("Cache HIT");
     return res.json(cache[key]);
   }
 
@@ -16,4 +16,10 @@ export const cacheMiddleware = (req: any, res: any, next: any) => {
   };
 
   next();
+};
+
+export const clearCache = () => {
+  Object.keys(cache).forEach((key) => {
+    delete cache[key];
+  });
 };

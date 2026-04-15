@@ -1,0 +1,37 @@
+Users CRUD Guide (Postman)
+
+1. Start server
+- Run: npm run dev
+- Server URL: http://localhost:3000
+
+2. Import Postman Collection
+- Open Postman
+- Click Import
+- Select file: postman_collection.json
+
+3. Available Endpoints
+- GET    /api/users?page=1
+- GET    /api/users/:id
+- POST   /api/users
+- PUT    /api/users/:id
+- DELETE /api/users/:id
+
+4. Request body examples
+
+POST /api/users
+{
+  "name": "New User",
+  "email": "newuser@gmail.com"
+}
+
+PUT /api/users/1
+{
+  "name": "Updated Name",
+  "email": "updated@gmail.com"
+}
+
+5. Notes
+- GET /api/users returns 5 users per page.
+- GET routes are cached.
+- Cache clears automatically after POST, PUT, DELETE.
+- Data is in-memory (resets when server restarts).
