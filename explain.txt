@@ -1,0 +1,47 @@
+Explanation of file.txt (Users CRUD Guide)
+
+What this file is:
+- This is a quick manual for testing a Users CRUD API using Postman.
+- CRUD means: Create, Read, Update, Delete.
+
+1. Start server
+- `npm run dev` starts your backend server in development mode.
+- `http://localhost:3000` is the base URL where your API is running on your own computer.
+
+2. Import Postman Collection
+- Postman is used to send API requests without building a frontend first.
+- Importing `postman_collection.json` loads ready-made requests, so testing is faster and easier.
+
+3. Available Endpoints (what each one does)
+- `GET /api/users?page=1`
+  - Read a list of users.
+  - `page=1` asks for the first page of results.
+- `GET /api/users/:id`
+  - Read one user by ID (example: `/api/users/1`).
+- `POST /api/users`
+  - Create a new user.
+- `PUT /api/users/:id`
+  - Update an existing user by ID.
+- `DELETE /api/users/:id`
+  - Delete a user by ID.
+
+4. Request body examples (JSON)
+- For `POST /api/users`, you send user data like name and email to create a record.
+- For `PUT /api/users/1`, you send new name/email values to replace old values for user 1.
+
+5. Notes explained
+- "GET /api/users returns 5 users per page"
+  - Pagination is enabled. You only get 5 users per request page.
+- "GET routes are cached"
+  - Repeated GET requests can return faster because results are temporarily stored.
+- "Cache clears automatically after POST, PUT, DELETE"
+  - When data changes, old cached GET results are removed so next GET returns fresh data.
+- "Data is in-memory (resets when server restarts)"
+  - Data is stored in RAM, not a database/file. If server stops/restarts, all current data is lost.
+
+Simple workflow to use this guide:
+1. Run `npm run dev`.
+2. Open Postman and import collection.
+3. Test GET list, GET by id, POST, PUT, DELETE.
+4. Confirm changes with GET requests.
+5. Remember data will reset after restart.
